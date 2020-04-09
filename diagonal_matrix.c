@@ -3,7 +3,7 @@
 
 int main() {
 
-    int macierz[4][4] =
+    int matrix[4][4] =
     {
             {rand()%10, rand()%10, rand()%10, rand()%10},
             {rand()%10, rand()%10, rand()%10, rand()%10},
@@ -14,15 +14,15 @@ int main() {
 
     int n = 4;
 
-// (a) WYSWIETLANIE MACIERZY
+//show matrix
     int i,j;
 
-    printf("Twoja macierz:\n");
+    printf("Your matrix:\n");
     for(i = 0; i < n; i++)
     {
         for(j = 0; j < n; j++)
         {
-            printf("%d ", macierz[i][j]);
+            printf("%d ", matrix[i][j]);
             if(j == 3)
             {
                 printf("\n");
@@ -30,58 +30,58 @@ int main() {
         }
     }
 
-// (b) OBLICZA SUME ELEMENTOW LEZACYCH NA GLOWNEJ PRZEKATNEJ
+// CALCULATES THE SUM OF ELEMENTS LOCATED ON MAIN DIAGONAL
     int nn = 3;
     int m = 3;
-    int suma = 0;
+    int sum = 0;
 
     while(nn>=0)
     {
-        suma+= macierz[nn][m];
+        sum+= matrix[nn][m];
         nn--;
         m--;
     }
-    printf("Suma elementow lezacych na glownej przekatnej: %d", suma);
+    printf("Sum of the elements lying on the main diagonal: %d", sum);
 
-// (c) OBLICZA SUME ELEMENTOW LEZACYCH NAD GLOWNA TRZEKATNA
+// CALCULATES THE SUM OF THE ELEMENTS LOCATED ABOVE THE MAIN DIAGONAL
 
     int nn2 = 2;
     int m2 = 3;
-    int suma2 = 0;
+    int sum2 = 0;
 
     while(m2>0)
     {
-        suma2+= macierz[m2][nn2];
+        sum2+= matrix[m2][nn2];
         nn2--;
         m2--;
     }
-    printf("\nSuma elementow lezacych pod glowna przekatna: %d", suma2);
+    printf("\nSum of the elements lying above the main diagonal: %d", sum2);
 
-// (d) OBLICZA SUME ELEMENTOW DRUGIEGO WIERSZA
+// CALCULATES THE SUM OF ELEMENTS OF THE SECOND LINE
 
     int nn3 = 3;
     int m3 = 1;
-    int suma3 = 0;
+    int sum3 = 0;
 
     while(nn3 >= 0)
     {
-        suma3+= macierz[m3][nn3];
+        sum3+= matrix[m3][nn3];
         nn3--;
     }
-    printf("\nSuma elementow drugiego wiersza: %d", suma3);
+    printf("\nSum of the elements of the second line: %d", sum3);
 
-// (e) oblicza sume elementow trzeciej kolumny
+// CALCULATES THE SUM OF THE ELEMENTS IN THE THIRD COLUMN
 
     int nn4 = 2;
     int m4 = 4;
-    int suma4 = 0;
+    int sum4 = 0;
 
     while(m4 >= 0)
     {
-        suma4+= macierz[nn4][m4];
+        sum4+= matrix[nn4][m4];
         m4--;
     }
-    printf("\nSuma elementow trzeciej kolumny: %d", suma4);
+    printf("\nSum of the elements in the third column: %d", sum4);
 
     return 0;
 }
